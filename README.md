@@ -1,44 +1,43 @@
-# Interpretador de Comandos de Ficheiros
+# File Command Interpreter
 
-Um interpretador de comandos em C que permite realizar operações sobre ficheiros e diretorias diretamente no terminal, utilizando processos filho (`fork`) para executar cada comando.
+A command interpreter written in C that allows you to perform operations on files and directories directly in the terminal. It utilizes child processes (fork) to execute each command independently.
 
 ---
 
-## Compilação
+## Compilation
 
-Na raiz do projeto, executar:
+From the project root, run the following:
 
 ```bash
-# Compilar o projeto
+# Compile the project
 cd src
 gcc interpretador.c funcoes.c -o interpretador
 
-# Executar o interpretador
+# Run the Interpreter
 ./interpretador
 ```
 
 ---
 
-## Utilização
+## Usage
 
-Após executar o interpretador, é apresentada uma prompt `%` onde podes introduzir comandos.
+After launching the interpreter, a % prompt will appear where you can enter commands.
 
 ```
 % <comando> [argumentos]
 ```
 
-Para sair do interpretador:
-
+To exit the interpreter:
 ```
 % termina
 ```
 
 ---
 
-## Comandos Disponíveis
+## Available Commands
 
-### `mostra <ficheiro>`
-Apresenta o conteúdo de um ficheiro no terminal.
+### `mostra <file>`
+Displays the content of a file in the terminal.
 
 ```
 % mostra teste.txt
@@ -46,8 +45,8 @@ Apresenta o conteúdo de um ficheiro no terminal.
 
 ---
 
-### `copia <ficheiro>`
-Cria uma cópia do ficheiro com o sufixo `.copia`, na mesma diretoria.
+### `copia <file>`
+Creates a copy of the file with the .copia suffix in the same directory.
 
 ```
 % copia teste.txt
@@ -55,17 +54,17 @@ Cria uma cópia do ficheiro com o sufixo `.copia`, na mesma diretoria.
 
 ---
 
-### `acrescenta <origem> <destino>`
-Acrescenta o conteúdo do ficheiro de origem no final do ficheiro de destino.
+### `acrescenta <source> <destination>`
+Appends the content of the source file to the end of the destination file.
 
 ```
-% acrescenta origem.txt destino.txt
+% acrescenta source.txt destination.txt
 ```
 
 ---
 
-### `conta <ficheiro>`
-Conta e apresenta o número de linhas de um ficheiro.
+### `conta <file>`
+Counts and displays the number of lines in a file.
 
 ```
 % conta teste.txt
@@ -73,21 +72,20 @@ Conta e apresenta o número de linhas de um ficheiro.
 
 ---
 
-### `apaga <ficheiro>`
-Remove o ficheiro indicado do sistema de ficheiros.
-
+### `apaga <file>`
+Removes the specified file from the file system.
 ```
 % apaga teste.txt
 ```
 
 ---
 
-### `informa <ficheiro>`
-Apresenta informações detalhadas sobre um ficheiro, incluindo:
-- Tipo de ficheiro (normal, diretoria, link simbólico)
-- Número do i-node
-- Nome do utilizador dono
-- Datas de último acesso, modificação e alteração de metadados
+### `informa <file>`
+Displays detailed information about a file, including:
+- File type (regular, directory, symbolic link)
+- I-node number
+- NOwner username
+- Timestamps (last access, modification, and metadata change)
 
 ```
 % informa teste.txt
@@ -95,9 +93,8 @@ Apresenta informações detalhadas sobre um ficheiro, incluindo:
 
 ---
 
-### `lista <diretoria>`
-Lista o conteúdo de uma diretoria, identificando cada entrada como ficheiro, diretoria ou outro tipo.
-
+### `lista <directory>`
+Lists the contents of a directory, identifying each entry as a file, directory, or other type.
 ```
 % lista .
 ```
